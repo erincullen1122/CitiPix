@@ -1,45 +1,62 @@
-/* Project: Citipix*/
-
-$( document ).ready(function() {
+$(document).ready(function() {
     console.log( "ready!" );
 });
 
-/*The element that will change based on user input =
-City Image based on City Name*/
 
-var city-name = ("text"); /*Q: RIGHT VALUE?I also 
-tried 0 and just cityname..and also using CorrectCityImage as the var/
+var cityname = "nyc" 
 
-/*The object we want to display/show is the Correct City Image when 
-users enters the City Name - I changed to City Name as to me
-this makes more sense*/
-
-function showCorrectImage(correctImage) { 
-var correctcityImage = city-name;
-return correctcityImage;
+function switchBackground(){
+    if(cityname === 'nyc'){
+    $('body').addClass('nyc');
+    cityname = 'nyc';
+  } 
+    $('a').click(function(event){
+    event.preventDefault(); 
+});
 }
+$('#cityname').click(switchBackground);
 
-$('#city-name').submit(function (event) {
-$('#submit-btn').val(""); /*Q: I DONT THINK this is the right 
-ID, but have tried #city-name, no go....*/
 
-   if(city-name === NYC)
-   {
-   	//change bg to NYC
-   	$('body').removeClass();
-   	$('body').addClass('nyc');
-   }
-   else if(city-name === SF)
-   {
-   	//change bg to SF
-   	$('body').removeClass();
-   	$('body').addClass('sf');
-   }
-   else(city-name === SYDNEY)
-   {
-   	//change bg to SYDNEY
-   	$('body').removeClass();
-   	$('body').addClass('sydney');
-   }
- });
+
+/* #1 
+on CLICK of the input bar, changes to NYC. only added 
+"var = nyc" to try and get this to work. :( 
+)
+function switchBackground(){
+    if(city === 'nyc'){
+    $('body').addClass('nyc');
+    city = 'nyc';
+  } 
+}
+  $('a').click(function(event){
+    event.preventDefault();
+});
+
+$('#cityname').click(switchBackground);
+
+==================================================
+
+/* #2
+just trying to see if I can NYC to show up after 
+click SUBMIT
+
+
+var city= 'nyc';
+
+function switchBackground(){
+    if(city === 'nyc'){
+    $('body').attr('container', 'nyc');
+    city = 'nyc';
+  } else {
+    $('body').removeClass();
+    } 
+}
+  $('a').click(function(event){
+    event.preventDefault();
+});
+
+$('#cityname').click(switchBackground);
+
+*/
+
 
